@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="CSS.css">
+</head>
+<body>
+    <div class="navbar">
+      <a href="#features">Features</a>
+      <a href="#prices">Prices</a>
+      <div class="dropdown">
+      <button class="dropbtn" onclick="myFunction()">Options
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="#option1">Strider</a>
+        <a href="#option2">Arya</a>
+        <a href="#option3">Mayor</a>
+      </div>
+      </div> 
+    </div>
+    <script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    /* Close the dropdown if the user clicks outside of it */
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+          myDropdown.classList.remove('show');
+        }
+      }
+    }
+    </script>
+    <div class="titlecontainer">
+      <h1>Epsilon 3</h1>
+      <p class="para">
+      </p>
+    </div>
+      <h2 id="features">Features</h2>
+    <div class="featurescontainer">
+      <p class="para">
+        Some features of the Epsilon 3 include: strong, durable claws, nuzzles, and extraordinarily soft texture. All versions of the Epsilon 3
+        come with a life-time warranty. As a <b>special gift</b> from our home to yours, we'll include one <b>free</b> box of kitty litter.
+      </p>
+    <p class="para">
+      Our versions include Strider, Arya, and Mayor. Make sure to look at these options before purchase, since supply is <b>LIMITED</b>.
+    </p>
+
+    </div>
+    <p class="para"></p>
+
+    <h2 id="prices">Prices</h2>
+    <div class="pricescontainer">
+      <p class="prices">
+        Strider: $299.95<br>&emsp;Installations of $35.95/month (%5 interest fee)
+      </p>
+      <p class="prices">
+        Arya: $275.95<br>&emsp;Installations of $30.95/month (%5 interest fee)
+      </p>
+      <p class="prices">
+        Strider: $499.95<br>&emsp;Installations of $45.95/month (%5 interest fee)<br>
+      </p>
+      <p class="para"></p>
+      <p class="para">
+        <br>
+        <br>
+        Don't waste time! Stock is running out!
+      </p>
+      
+    </div>
+    <p class="para"></p>
+
+    <h2>Options</h2>
+    <div class="optionscontainer">
+    <div class="option1">
+      <h3 id="option1">Strider</h3>
+      <p class="para">Strider is a loveable goofball. Turning 4 years old, he's much like your average toddler.<br>He loves lounging around,
+      chasing his siblings, and walking on your face at night.<br>He is <b>EXTREMELY</b> people-friendly.</p>
+    </div>
+    <div class="option2">
+      <h3 id="option2">Arya</h3>
+      <p class="para">Don't get this scaredy cat mistaken - she loves her silky fur being pet.</p>
+    </div>
+    <div class="option3">
+      <h3 id="option3">Mayor</h3>
+      <p class="para">Not only is Mayor my oldest companion, but he is the kindest and bestest kitty you could ever ask for.</p>
+    </div>
+    </div>
+      <p class="para">
+        <br>
+      </p>
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="Strider.jpg" style="width:100%">
+            <div class="text">Strider</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="Arya.jpg" style="width:100%">
+            <div class="text">Arya</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="Mayor.jpg" style="width:100%">
+            <div class="text">Mayor</div>
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+          <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+      </div>
+</body>
+</html>
